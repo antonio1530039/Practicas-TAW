@@ -4,7 +4,7 @@
 		$nombre = $_POST["nombre"];$ciudad = $_POST["ciudad"];
 		echo "<center>
 			<strong>$nombre</strong><br>
-			<strong>$ciudad</strong>
+			<h2>$ciudad</h2>
 		";
 	}
 ?>
