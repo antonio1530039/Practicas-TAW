@@ -47,7 +47,7 @@
 	}
 	#creacion del objeto de la clase fibo
 	$f = new fibo();
-	#ejecucion de metodos para obtener la serie de Fibonacci
+	#ejecucion de metodos para obtener la serie de Fibonacci e imprimir, asi como imprimir el otro arreglo de 25 posiciones
 	$f->performFibonacci();
 	$f->printFibonacci();
 
