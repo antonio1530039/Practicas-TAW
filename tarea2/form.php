@@ -2,7 +2,6 @@
 <head>
     <title>Formulario en PHP7</title>
 </head>
-
 <body>
 <?php
 	include("class_form.php"); //Se incluye el archivo contenedor de la clase a utilizar

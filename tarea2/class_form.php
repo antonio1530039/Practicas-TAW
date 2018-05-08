@@ -14,7 +14,7 @@
 			$this->website=$website;
 		}
 
-		//Metodo validateAll: ejecuta las funciones de validacion de cada respectivo dato
+		//Metodo validateAll: ejecuta las funciones de validacion de cada respectivo atributo, asi como la validacion de forma manual del atributo comment y gender
 		public function validateAll(){
 			$this->validateName();
 			$this->validateEmail();

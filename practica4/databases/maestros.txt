@@ -1,0 +1,3 @@
+867272,Mario Rodriguez,Ing. Tecnologias de la Informacion,8217382123,
+123131,Pedro Ruiz,Ing. en Mecatronica,87652212,
+718281,Profesor 1,Ing. Tecnologias de la Informacion,telefono1,
