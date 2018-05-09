@@ -12,9 +12,7 @@ $total_users = count($alumnos)-1; //Se resta uno debido a que la posicion 0 en e
     <script src="./js/vendor/modernizr.js"></script>
   </head>
   <body>
-    
     <?php require_once('header.php'); ?>
-
     <?php
       if(isset($_POST["btn_agregar"]))
         header("Location: alta_alumno.php");

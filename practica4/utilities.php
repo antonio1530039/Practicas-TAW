@@ -13,18 +13,15 @@
                     $save[strlen($save)-1]=" ";//Se elimina la coma
                     switch ($control) {
                         case 0:
-                            $numEmpleado=$save;$save="";$control++;
-                            break;
+                            $numEmpleado=$save;break;
                         case 1:
-                            $nombreE=$save;$save="";$control++;
-                            break;
+                            $nombreE=$save;break;
                         case 2:
-                            $carrera=$save;$save="";$control++;
-                            break;
+                            $carrera=$save;break;
                         case 3:
-                            $telefono=$save;$save="";$control++;
-                            break;
+                            $telefono=$save;break;
                     }
+                    $save="";$control++;
                 }
            }
            //Al terminar de leer los datos de la linea se asigna este a un arreglo asociativo
@@ -57,21 +54,17 @@
                     $save[strlen($save)-1]=" ";//Se elimina la coma
                     switch ($control) { //En base a la variable $control se define que dato es el que se va guardar
                         case 0:
-                            $matricula=$save;$save="";$control++;
-                            break;
+                            $matricula=$save;break;
                         case 1:
-                            $nombre=$save;$save="";$control++;
-                            break;
+                            $nombre=$save;break;
                         case 2:
-                            $carrera=$save;$save="";$control++;
-                            break;
+                            $carrera=$save;break;
                         case 3:
-                            $correo=$save;$save="";$control++;
-                            break;
+                            $correo=$save;break;
                         case 4:
-                            $telefono=$save;$save="";$control++;
-                            break;
+                            $telefono=$save;break;
                     }
+                    $control++;$save="";
                 }
            }
            //Al terminar de leer los datos de la linea se asigna este a un arreglo asociativo
