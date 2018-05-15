@@ -62,7 +62,7 @@
                     <td><?php echo $fila['nombre'] ?></td>
                     <td><?php echo $fila['precio_unitario'] ?></td>
                     <td><a href="./detail.php?id=<?php echo $fila['id'];?>&type=producto" class="button radius tiny secondary">Ver detalles</a></td>
-                    <td><a href="./deleteProduct.php?id=<?php echo $fila['id']; ?>&type=producto" class="button radius tiny alert" onclick='confirmAction();'>Eliminar</a></td>
+                    <td><a href="./delete.php?id=<?php echo $fila['id']; ?>&type=producto" class="button radius tiny alert" onclick='confirmAction();'>Eliminar</a></td>
                   </tr>
                   <?php } ?>
                   <tr>

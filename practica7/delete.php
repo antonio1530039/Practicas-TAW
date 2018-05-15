@@ -3,7 +3,11 @@
   //Inicializacion de variables tomandolas del array GET
   $id = isset($_GET['id']) ? $_GET['id'] : '';
   $type = isset($_GET['type']) ? $_GET['type'] : '';
-  delete($id,$type);
+  if($type=='producto')
+  	deleteProduct($id,$type);
+  else
+  	  delete($id,$type);
+
   header("Location: $type"."s.php")
   
 
