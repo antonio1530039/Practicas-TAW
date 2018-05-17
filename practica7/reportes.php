@@ -10,8 +10,6 @@
   }
   require_once('./db/database_utilities.php'); //se importa el archivo.php que contiene las funciones requeridas para trabajar con la bd
 
-
-
                   
 ?>
 <!doctype html>
@@ -71,8 +69,10 @@
 
                     if(isset($_POST['aceptar'])){
                         $sql = "SELECT * FROM venta WHERE fecha='".$_POST['fecha']."'";
+                        $sql2 = "SELECT SUM(monto) FROM venta WHERE fecha='".$_POST['fecha']."'";
                     }else{
                       $sql = "SELECT * FROM venta";
+                      $sql2 = "SELECT SUM(monto) FROM venta";
                     }
                     
                     
@@ -86,6 +86,12 @@
                        echo "<td><a href='./detalle_venta.php?id=". $fila['id'] . "&type=venta' class='button radius tiny secondary'>Ver detalles</a></td>";
                        echo "</tr>";
                     }
+
+                    
+                    $query2=$pdo->prepare($sql2);
+                    $query2->execute();
+                    $total_q = $query2->fetch();
+                    echo "<h3 style='text-align: right;font-weight: bold;'>Monto total del filtro seleccionado: $ ".$total_q[0]."</h3>";
 
 
                 }
@@ -103,12 +109,5 @@
       </div>
 
     </div>
-    <script type="text/javascript">
-      function confirmAction(){
-        var conf = confirm("Se eliminara el producto, desea continuar?");
-        if(!conf)
-          event.preventDefault();
-      }
-    </script>
 
     <?php require_once('footer.php'); ?>

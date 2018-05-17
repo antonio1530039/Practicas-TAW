@@ -9,7 +9,12 @@
     header("Location: login.php");
   }
   require_once('./db/database_utilities.php'); //se importa el archivo.php que contiene las funciones requeridas para trabajar con la bd
-
+  //Obtener id de venta o folio
+  $sqlX = "SELECT MAX(id) FROM venta"; //sentencia a ejecutar
+  $queryX = $pdo->prepare($sqlX); //se prepara la consulta
+  $queryX->execute();
+  $resultadosx = $queryX->fetch();
+  $idx = $resultadosx[0];
 
   if(isset($_POST['registrar'])){
   	$i=0;
@@ -36,12 +41,13 @@
   		$precio_v = $_POST['js_precio_venta'.$i];
   		$importe = $_POST['js_importe'.$i];
   		$sql3 = "INSERT INTO venta_producto(folio_venta, id_producto, cantidad, precio_venta, importe) VALUES($id,$id_producto, $cant,$precio_v, $importe)"; //se insertara el registro
-		$query3 = $pdo->prepare($sql3); //se prepara la consulta
-		$query3->execute();
+		  $query3 = $pdo->prepare($sql3); //se prepara la consulta
+		  $query3->execute();
 
   		$i++;
   	}
     echo "<script>alert('Venta registrada');</script>";
+    header("Refresh:0");
   }
                   
 ?>
@@ -110,8 +116,8 @@
               	<h3>Información de la venta</h3>
               </p>
               <p>
-              	<h5 name='fecha' style="text-align: right;font-weight: bold;">Fecha: <?php echo date('Y-m-d') ?></h5>
-              	<h5 style="text-align: right;font-weight: bold;">Total de la venta: </h5>
+              	<h5 name='fecha' style="text-align: right;font-weight: bold;">Folio: <?php echo ($idx+1) ?>       | Fecha: <?php echo date('Y-m-d') ?></h5>
+              	<h5 style="text-align: right;font-weight: bold;">Total de la venta:</h5>
               	<input name='total' id="total" style="text-align: center;font-weight: bold;" value="0.0"></input>
               	<input name='registrar' type="submit" style="float:right" value="Registrar venta" class="button tiny success" onclick="check();"></input>
               </p>

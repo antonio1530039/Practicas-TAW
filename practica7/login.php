@@ -47,10 +47,10 @@
             <div class="content" data-slug="panel1">
               <div class="row">
                 <p>
-                  <input type="text" name="username" required="" placeholder="Username" required="">
+                  <input type="text" name="username" required="" value="admin" placeholder="Username" required="">
                 </p>
                 <p>
-                  <input type="text" name="password" required="" placeholder="Password" required="">
+                  <input type="text" name="password" required="" value="admin" placeholder="Password" required="">
                 </p>
                 <p>
                   <input type="submit" name="btn_add" value="Iniciar sesion" class="button tiny success">

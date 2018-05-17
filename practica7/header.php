@@ -14,8 +14,16 @@
       </div>
       <div class="large-9 columns">
         <ul class="right button-group">
-          <li><a href="./index.php" class="button">Inicio</a></li>
-          <li><a href="./logout.php" class="button">Cerrar sesion</a></li>
+          <li><a href="./index.php" style="background-color:purple" class="button">Inicio</a></li>
+          <?php
+          if(!empty($_SESSION["login"])){ //se verifica que el usuario este logueado
+              
+          ?>
+          <li><a href="./logout.php" style="background-color:red" class="button">Cerrar sesion</a></li>
+
+          <?php
+
+        }?>
         </ul>
       </div>
     </div>
